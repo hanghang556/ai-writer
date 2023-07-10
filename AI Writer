@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Writer</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      font-family: "Poppins";
+    }
+    .main {
+      padding: 10px 160px;
+      height: 836px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+    .main .main-left-content {
+      width: 663px;
+      height: 615px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .main .main-left-content .title {
+      width: 171px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .main .main-left-content .title img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+    .main .main-left-content .title .writer {
+      font-family: "Poppins";
+      font-size: 28px;
+      color: #191a15;
+    }
+    .main .main-left-content .content {
+      width: 100%;
+      height: 543px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .main .main-left-content .content .description {
+      width: 568px;
+      height: 218px;
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .main .main-left-content .content .info {
+      width: 528px;
+      height: 71px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .main .main-left-content .content .info .store {
+      width: 155px;
+    }
+    .main .main-left-content .content .info .download {
+      width: 113px;
+    }
+    .main .main-left-content .content .info .grade {
+      width: 110px;
+    }
+    .main .main-left-content .content .info .data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .main .main-left-content .content .info .data .data-number {
+      font-size: 40px;
+      font-weight: 600;
+    }
+    .main .main-left-content .content .info .data .data-message {
+      font-size: 16px;
+    }
+    .main .main-left-content .content .info .data img {
+      width: 110px;
+      height: 16px;
+    }
+    .main .main-left-content .content .info .line {
+      height: 65%;
+      border-left: 1px #10a37f solid;
+    }
+    .main .main-left-content .content .download-method {
+      width: 100%;
+      height: 166px;
+      display: flex;
+    }
+    .main .main-left-content .content .download-method .code {
+      width: 122px;
+      height: 100%;
+      font-size: 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      line-height: 14px;
+    }
+    .main .main-left-content .content .download-method .code img {
+      height: 122px;
+    }
+    .main .main-left-content .content .download-method .link {
+      width: 497px;
+      height: 142px;
+      margin-left: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .main .main-left-content .content .download-method .link .link-button {
+      width: 312px;
+      height: 44px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .main .main-left-content .content .download-method .link .link-button .app {
+      width: 132px;
+      height: 44px;
+    }
+    .main .main-left-content .content .download-method .link .link-button .google {
+      height: 148px;
+      height: 44px;
+    }
+    .main .main-right-show {
+      width: 659px;
+      height: 836px;
+      position: relative;
+    }
+    .main .main-right-show img {
+      width: 659px;
+      height: 932px;
+      position: absolute;
+      top: 0;
+      left: 83px;
+    }
+    @media (max-width: 768px) {
+      html {
+        font-size: 5.3333vw;
+      }
+      #main.main {
+        width: 100vw;
+        overflow-x: hidden;
+        padding: 0.25rem;
+        box-sizing: border-box;
+        display: block;
+      }
+      #main.main .main-left-content {
+        width: 98%;
+        height: 12.5rem;
+        display: block;
+      }
+      #main.main .main-left-content .title {
+        width: 100%;
+        height: 1.5rem;
+        display: flex;
+      }
+      #main.main .main-left-content .title img {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 0.2rem;
+      }
+      #main.main .main-left-content .title .writer {
+        font-size: 0.9rem;
+      }
+      #main.main .main-left-content .content {
+        width: 100%;
+        height: 20rem;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      #main.main .main-left-content .content .description {
+        width: 90%;
+        height: 3rem;
+        font-size: 1.25rem;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+      #main.main .main-left-content .content .info {
+        width: 92%;
+        height: 2.5rem;
+      }
+      #main.main .main-left-content .content .info .store {
+        width: 3.875rem;
+      }
+      #main.main .main-left-content .content .info .download {
+        width: 2.825rem;
+      }
+      #main.main .main-left-content .content .info .grade {
+        width: 2.75rem;
+      }
+      #main.main .main-left-content .content .info .data {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+      }
+      #main.main .main-left-content .content .info .data .data-number {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      #main.main .main-left-content .content .info .data .data-message {
+        font-size: 0.4rem;
+      }
+      #main.main .main-left-content .content .info .data img {
+        width: 2.75rem;
+        height: 0.4rem;
+      }
+      #main.main .main-left-content .content .download-method {
+        width: 100%;
+        height: 4.15rem;
+        display: block;
+      }
+      #main.main .main-left-content .content .download-method .code {
+        width: 8rem;
+        height: 9.5rem;
+        margin: 0.8rem auto;
+        margin-top: 16rem;
+        font-size: 0.35rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        line-height: 0.6rem;
+      }
+      #main.main .main-left-content .content .download-method .code img {
+        height: 8rem;
+      }
+      #main.main .main-left-content .content .download-method .link {
+        width: 100%;
+        height: 3.55rem;
+        margin-left: 0;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #main.main .main-left-content .content .download-method .link .link-button {
+        width: 100%;
+        height: 1.1rem;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #main.main .main-left-content .content .download-method .link .link-button .app {
+        width: 4.5rem;
+        height: 1.5rem;
+      }
+      #main.main .main-left-content .content .download-method .link .link-button .google {
+        height: 5.04rem;
+        height: 1.5rem;
+      }
+      #main.main .main-left-content .content .download-method .link .introduce {
+        width: 80%;
+        height: 4.5rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+        font-size: 0.35rem;
+        text-align: center;
+      }
+      #main.main .main-right-show {
+        display: none;
+        display: block;
+        width: 12rem;
+        height: 15rem;
+        position: relative;
+      }
+      #main.main .main-right-show img {
+        width: 12rem;
+        height: 15rem;
+        position: absolute;
+        top: -5rem;
+        left: 2.6rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main" id="main">
+    <div class="main-left-content">
+      <div class="title">
+        <img src="https://framerusercontent.com/images/5rra1EnJHm9SdHnxyOnFE1NqGvc.png" alt="icon">
+        <h2 class="writer">AI Writer</h2>
+      </div>
+      <div class="content">
+        <div class="description">
+          <span>Write emails, essays, articles in seconds!</span>
+        </div>
+        <div class="info">
+          <div class="data store">
+            <span class="data-number">#1</span>
+            <span class="data-message">in the App Store US</span>
+          </div>
+          <div class="line"></div>
+          <div class="data download">
+            <span class="data-number">10M+</span>
+            <span class="data-message">Downloads</span>
+          </div>
+          <div class="line"></div>
+          <div class="data grade">
+            <span class="data-number">2M+</span>
+            <img src="https://framerusercontent.com/images/l3ZchMJQ6OQ2Y9gaUGCyZDrRWAw.png" alt="grade">
+          </div>
+        </div>
+        <div class="download-method">
+          <div class="code">
+            <img src="https://framerusercontent.com/images/P0eoMFePAEfn6LmPmnoWGQiJU0.png" alt="code">
+            <span>Scan the QR code to download APP</span>
+          </div>
+          <div class="link">
+            <div class="link-button">
+              <img class="app" src="https://framerusercontent.com/images/Fz3mb2xx2AMnewszuidPDhxETp8.png" alt="App">
+              <img class="google" src="https://framerusercontent.com/images/V3RfLHAWvhCOKga0G5tQ9R4c6g0.png" alt="Google">
+            </div>
+            <div class="introduce">The revolutionary new way to create content powered by ChatGPT & GPT-4, GPT-3. It makes writing easier than ever before. Get started today and experience the power of AI!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-right-show">
+      <img src="https://framerusercontent.com/images/6z2mCnKtylHonsilj5W4QF9rKzk.png" alt="iphone">
+    </div>
+  </div>
+</body>
+</html>
