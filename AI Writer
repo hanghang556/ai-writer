@@ -14,8 +14,7 @@
       font-family: "Poppins";
     }
     .main {
-      padding: 10px 160px;
-      height: 836px;
+      padding: 0 160px;
       box-sizing: border-box;
       display: flex;
       align-items: center;
@@ -152,6 +151,7 @@
       }
       #main.main {
         width: 100vw;
+        height: 100vh;
         overflow-x: hidden;
         padding: 0.25rem;
         box-sizing: border-box;
@@ -159,7 +159,7 @@
       }
       #main.main .main-left-content {
         width: 98%;
-        height: 12.5rem;
+        height: 22.5rem;
         display: block;
       }
       #main.main .main-left-content .title {
@@ -183,8 +183,10 @@
       }
       #main.main .main-left-content .content .description {
         width: 90%;
-        height: 3rem;
+        height: 5rem;
+        margin-top: 0.25rem;
         font-size: 1.25rem;
+        line-height: 1.5;
         text-align: center;
         margin-top: 0.5rem;
       }
@@ -228,7 +230,7 @@
         width: 8rem;
         height: 9.5rem;
         margin: 0.8rem auto;
-        margin-top: 16rem;
+        margin-top: 17rem;
         font-size: 0.35rem;
         text-align: center;
         display: flex;
@@ -251,6 +253,7 @@
       #main.main .main-left-content .content .download-method .link .link-button {
         width: 100%;
         height: 1.1rem;
+        margin-top: 0.5rem;
         display: flex;
         justify-content: space-evenly;
       }
@@ -267,25 +270,25 @@
         height: 4.5rem;
         margin: 0 auto;
         margin-top: 1rem;
+        padding-bottom: 1rem;
         font-size: 0.35rem;
         text-align: center;
       }
       #main.main .main-right-show {
-        display: none;
         display: block;
         width: 12rem;
-        height: 15rem;
+        height: 0;
         position: relative;
       }
       #main.main .main-right-show img {
         width: 12rem;
         height: 15rem;
         position: absolute;
-        top: -5rem;
+        top: -12rem;
         left: 2.6rem;
       }
     }
-
+  
   </style>
 </head>
 <body>
